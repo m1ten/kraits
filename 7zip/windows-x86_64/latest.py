@@ -1,3 +1,4 @@
 # latest test
 
-install = "yes but no, well actually yes"
+def install():
+  print("well no but yes, idk")
