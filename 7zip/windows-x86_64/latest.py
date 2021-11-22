@@ -1,4 +1,8 @@
 # latest test
 
 def install():
-  print("well no but yes, idk")
+  print("YES IT IS BEING INSTALLED.")
+  
+  input("ENTER ANYTHING.")
+  
+  print("INSTALLED.")
