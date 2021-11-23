@@ -6,3 +6,6 @@ def install():
   input("ENTER ANYTHING.")
   
   print("INSTALLED.")
+
+def uninstall():
+   print("NOOOOOOO!!!")
