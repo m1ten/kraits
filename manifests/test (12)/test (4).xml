@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<name>test</name>
+	<ver>1.2.3</ver>
+	<desc>test package</desc>
+	<license>Public Domain</license>
+	<pkg>
+		<supports>
+			<x86>ubuntu</x86>
+			<x86>arch</x86>
+		</supports>
+		<supports>
+			<x86_64>windows</x86_64>
+			<x86_64>darwin</x86_64>
+		</supports>
+		<repos>abc://test.xyz/test/repo</repos>
+		<repos>abc://test.xyz/test/repo-mirror</repos>
+		<ver>1.2.3</ver>
+		<deps>
+			<test-2>4.5.6</test-2>
+		</deps>
+		<deps>
+			<test-3>7.8.9</test-3>
+		</deps>
+		<dev_deps>
+			<test-4>6.9.0</test-4>
+		</dev_deps>
+		<dev_deps>
+			<test-5>4.2.0</test-5>
+		</dev_deps>
+		<type>binary</type>
+		<srcs>
+			<path>abc://test.xyz/test/src</path>
+			<path>abc://test.xyz/test/src-mirror</path>
+			<hashes>
+				<sha256>123456789</sha256>
+			</hashes>
+			<hashes>
+				<md5>987654321</md5>
+			</hashes>
+		</srcs>
+		<test>
+			<name>Print Test - POSIX</name>
+			<if>${os.group} == "posix"</if>
+			<if>${os.group} != "windows"</if>
+			<run>echo "Hello World!"</run>
+		</test>
+		<test>
+			<name>Print Test - Windows</name>
+			<if>${os.group} == "windows"</if>
+			<if>${os.group} != "posix"</if>
+			<run>Write-Host "Hello World!"</run>
+		</test>
+	</pkg>
+</root>

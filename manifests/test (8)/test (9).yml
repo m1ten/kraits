@@ -1,0 +1,44 @@
+---
+name:
+  - test
+ver: 1.2.3
+desc: test package
+license:
+  - Public Domain
+pkg:
+  - supports:
+      - x86:
+          - ubuntu
+          - arch
+      - x86_64:
+          - windows
+          - darwin
+    repos:
+      - "abc://test.xyz/test/repo"
+      - "abc://test.xyz/test/repo-mirror"
+    ver: 1.2.3
+    deps:
+      - test-2: 4.5.6
+      - test-3: 7.8.9
+    dev_deps:
+      - test-4: 6.9.0
+      - test-5: 4.2.0
+    type: binary
+    srcs:
+      - path:
+          - "abc://test.xyz/test/src"
+          - "abc://test.xyz/test/src-mirror"
+        hashes:
+          - sha256: "123456789"
+          - md5: "987654321"
+    test:
+      - name: Print Test - POSIX
+        if:
+          - "${os.group} == \"posix\""
+          - "${os.group} != \"windows\""
+        run: "echo \"Hello World!\""
+      - name: Print Test - Windows
+        if:
+          - "${os.group} == \"windows\""
+          - "${os.group} != \"posix\""
+        run: "Write-Host \"Hello World!\""
