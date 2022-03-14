@@ -69,10 +69,11 @@ for dir in dirs:
 	mf = {}
 	files = os.listdir(dir)
 	for file in files:
-		if file.endswith(".yml"):
+		# Get file name with extension
+		if (dir + "/" + file).endswith(".yml"):
 
 			# Read from f.yml in dir
-			with open(dir + f'/{dir}.yml', 'r') as f:
+			with open(f'{dir + "/" + file}', 'r') as f:
 				f_file = f.read()
 				f_yaml = yaml.load(f_file, Loader=yaml.FullLoader)
 
