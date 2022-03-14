@@ -12,6 +12,8 @@ import sys
 import os
 import yaml
 
+yaml.Dumper.ignore_aliases = True
+
 # Get specific flag passed to script
 def get_flag(flag):
 	for i in range(1, len(sys.argv)):
