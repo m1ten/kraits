@@ -12,7 +12,7 @@ import sys
 import os
 import yaml
 
-yaml.Dumper.ignore_aliases = True
+yaml.Dumper.ignore_aliases = lambda *args : True
 
 # Get specific flag passed to script
 def get_flag(flag):
