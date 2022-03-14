@@ -63,6 +63,8 @@ if not mf_yaml:
 	print('manifest.yml is empty.')
 	exit('todo: add support for creating manifest.')
 
+mf_yaml['latest_commit'] = commit
+
 # Get list of files in each folder
 for dir in dirs:
 	print(dir)
