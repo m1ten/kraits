@@ -19,6 +19,8 @@ jobs:
       - run: |
           cd $GITHUB_WORKSPACE
 
+          echo $GITHUB_WORKSPACE
+
           # Update manifest.yml
           for commit in $(git rev-list ${{ github.base_ref }}..${{ github.head_ref }}); do
               python3 scripts/manifest.py --commit $commit
