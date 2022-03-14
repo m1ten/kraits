@@ -61,8 +61,9 @@ print(mf_yaml)
 # Check if mf_yaml is a empty dict
 if not mf_yaml:
 	print('manifest.yml is empty.')
-	exit('todo: add support for creating manifest.')
 
+# Get name of repo 
+mf_yaml['name'] = 'neopkgs'
 mf_yaml['latest_commit'] = commit
 
 # Get list of files in each folder
