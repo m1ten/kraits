@@ -8,13 +8,24 @@
 
 # Only supports Linux (for now)
 
-import os 
+import sys
+import os
 import yaml
+
+# Get specific flag passed to script
+def get_flag(flag):
+	for i in range(1, len(sys.argv)):
+		if sys.argv[i] == flag:
+			return sys.argv[i+1]
+	return None
+
+commit = get_flag('--commit')
+		
 
 # Get list of dirs in a subdir that changed in the last commit
 def get_changed_dirs(subdir):
 	changed_dirs = []
-	for line in os.popen('git diff --name-only HEAD~1'):
+	for line in os.popen('git show --name-only --pretty=format:"" --diff-filter=ACMRTUXB ' + commit).readlines():
 		if line.startswith(subdir):
 
 			# Check if line is a file or a directory
@@ -64,9 +75,6 @@ for dir in dirs:
 		with open(f"{mf[file]['path']}.sha256sum", 'r') as f:
 			mf[file]['sha256'] = f.read().split()[0]
 		os.remove(f"{mf[file]['path']}.sha256sum")
-
-		# Get commit id and assign to commit
-		commit = os.popen(f"git log -1 --format=%H").read().strip()
 
 		# Get url of file in dir
 		mf[file]['url'] = f"https://github.com/m1ten/time/blob/{commit}/{mf[file]['path']}"

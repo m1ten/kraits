@@ -12,10 +12,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Update manifest.yml
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - run: |
+          # Update manifest.yml
           for commit in $(git rev-list ${{ github.base_ref }}..${{ github.head_ref }}); do
-              python3 scripts/manifest.py
+              python3 scripts/manifest.py --commit $commit
           done
+
+          # push changes to github
+          git add manifest.yml
+          git commit -m "Update manifest.yml for ${{ github.head_ref }}"
+          git push origin main:main 
