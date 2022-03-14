@@ -4,16 +4,16 @@ testa:
   diamond.txt:
     path: manifests/testa/diamond.txt
     sha256: de392592d634f745cac529d52fd08c7b98d460ec7324989f18de8a4886370f96
-    url: https://github.com/m1ten/neopkg/blob/14f03b49f1f465ae6099bfa40f098cdf41584ef9/manifests/testa/diamond.txt
+    url: https://github.com/m1ten/neopkgs/blob/14f03b49f1f465ae6099bfa40f098cdf41584ef9/manifests/testa/diamond.txt
   gold.txt:
     path: manifests/testa/gold.txt
     sha256: b5cb684ea526152071c9bee8fb65b004194acb6b6e6254b40c90a71d3eb299c8
-    url: https://github.com/m1ten/neopkg/blob/14f03b49f1f465ae6099bfa40f098cdf41584ef9/manifests/testa/gold.txt
+    url: https://github.com/m1ten/neopkgs/blob/14f03b49f1f465ae6099bfa40f098cdf41584ef9/manifests/testa/gold.txt
   silver.txt:
     path: manifests/testa/silver.txt
     sha256: 276c395e3b8f178438b53d3e92de3c78e079bbabfa2e893c8880b57f062e2b78
-    url: https://github.com/m1ten/neopkg/blob/14f03b49f1f465ae6099bfa40f098cdf41584ef9/manifests/testa/silver.txt
+    url: https://github.com/m1ten/neopkgs/blob/14f03b49f1f465ae6099bfa40f098cdf41584ef9/manifests/testa/silver.txt
   testa.yml:
     path: manifests/testa/testa.yml
     sha256: 22ab6334827271ec9a6daab879156b2a6e268bc4ac90a17d36078c0f2abdd157
-    url: https://github.com/m1ten/neopkg/blob/14f03b49f1f465ae6099bfa40f098cdf41584ef9/manifests/testa/testa.yml
+    url: https://github.com/m1ten/neopkgs/blob/14f03b49f1f465ae6099bfa40f098cdf41584ef9/manifests/testa/testa.yml
