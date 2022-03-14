@@ -69,15 +69,18 @@ for dir in dirs:
 	mf = {}
 	files = os.listdir(dir)
 	for file in files:
-		if file.endswith(".yml") and file == f"{dir}.yml":
+		if file.endswith(".yml"):
 
 			# Read from f.yml in dir
 			with open(dir + f'/{dir}.yml', 'r') as f:
 				f_file = f.read()
 				f_yaml = yaml.load(f_file, Loader=yaml.FullLoader)
 
-				mf['ver'] = f_yaml['ver']
-				mf['updates'] = f_yaml['updates']
+				try:
+					mf['ver'] = f_yaml['ver']
+					mf['updates'] = f_yaml['updates']
+				except KeyError: 
+					print('Invalid yaml file: ' + file)
 
 		mf[file] = {}
 		mf[file]['path'] = dir + "/" + file
