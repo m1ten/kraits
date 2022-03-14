@@ -38,6 +38,13 @@ def get_changed_dirs(subdir):
 
 dirs = get_changed_dirs('manifest')
 
+# Check if dirs is empty
+if len(dirs) == 0:
+	exit('No directories changed in manifest directory.')
+
+# Remove empty dirs
+dirs = [d for d in dirs if d != '']
+
 print(dirs)
 
 # Read manifest.yml
