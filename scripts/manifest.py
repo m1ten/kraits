@@ -64,9 +64,9 @@ if not mf_yaml:
 	exit('todo: add support for creating manifest.')
 
 # Get list of files in each folder
-mf = {}
 for dir in dirs:
 	print(dir)
+	mf = {}
 	files = os.listdir(dir)
 	for file in files:
 		if file.endswith(".yml") and file == f"{dir}.yml":
@@ -103,7 +103,7 @@ for dir in dirs:
 	except KeyError:
 		mf_yaml[dir] = [mf]
 
-print(mf)
+	print(mf)
 
 # Write to manifest.yml
 with open('manifest.yml', 'w') as m:
