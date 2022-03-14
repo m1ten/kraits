@@ -40,15 +40,6 @@ def get_changed_dirs(subdir):
 
 dirs = get_changed_dirs('manifest')
 
-# Check if dirs is empty
-if len(dirs) == 0:
-	exit('No directories changed in manifest directory.')
-
-# Remove empty dirs
-dirs = [d for d in dirs if d != '']
-
-print(dirs)
-
 # Read manifest.yml
 with open('manifest.yml', 'r') as m:
 	mf_file = m.read()
@@ -65,6 +56,15 @@ if not mf_yaml:
 # Get name of repo 
 mf_yaml['name'] = 'neopkgs'
 mf_yaml['latest_commit'] = commit
+
+# Check if dirs is empty
+if len(dirs) == 0:
+	print('No directories changed in manifest directory.')
+
+# Remove empty dirs
+dirs = [d for d in dirs if d != '']
+
+print(dirs)
 
 # Get list of files in each folder
 for dir in dirs:
