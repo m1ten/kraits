@@ -105,4 +105,4 @@ print(mf)
 
 # Write to manifest.yml
 with open('manifest.yml', 'w') as m:
-	m.write(yaml.dump(mf_yaml), default_flow_style=False)
+	m.write(yaml.dump(mf_yaml, default_flow_style=False))
