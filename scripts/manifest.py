@@ -57,18 +57,21 @@ if not mf_yaml:
 # Get list of files in each folder
 mf = {}
 for dir in dirs:
-	path = "manifests/" + dir
-	files = os.listdir(path)
+	print(dir)
+	files = os.listdir(dir)
 	for file in files:
 		if file.endswith(".yml") and file == f"{dir}.yml":
 
 			# Read from f.yml in dir
-			with open(path + f'/{dir}.yml', 'r') as f:
+			with open(dir + f'/{dir}.yml', 'r') as f:
 				f_file = f.read()
 				f_yaml = yaml.load(f_file, Loader=yaml.FullLoader)
 
+				mf['ver'] = f_yaml['ver']
+				mf['updates'] = f_yaml['updates']
+
 		mf[file] = {}
-		mf[file]['path'] = path + "/" + file
+		mf[file]['path'] = dir + "/" + file
 		
 		# Get sha256sum of file in dir
 		os.system(f"sha256sum {mf[file]['path']} > {mf[file]['path']}.sha256sum")
@@ -80,12 +83,11 @@ for dir in dirs:
 		mf[file]['url'] = f"https://github.com/m1ten/time/blob/{commit}/{mf[file]['path']}"
 
 	# Add to manifest
-	mf['ver'] = f_yaml['ver']
-	mf['updates'] = f_yaml['updates']
 	mf['commit'] = commit
 
 	# Add mf to mf_yaml
-	try: 
+	dir = dir.replace('manifests/', '')
+	try:
 		if mf in mf_yaml[dir]:
 			exit(f"Modified {dir} already exists in manifest.yml")
 		mf_yaml[dir].append(mf)
