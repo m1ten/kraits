@@ -67,6 +67,8 @@ if not mf_yaml:
 for dir in dirs:
 	print(dir)
 	mf = {}
+	mf['commit'] = commit
+	
 	files = os.listdir(dir)
 	for file in files:
 		# Get file name with extension
@@ -95,9 +97,6 @@ for dir in dirs:
 		# Get url of file in dir
 		mf[file]['url'] = f"https://raw.githubusercontent.com/m1ten/neopkgs/{commit}/{mf[file]['path']}"
 
-	# Add to manifest
-	mf['commit'] = commit
-
 	# Add mf to mf_yaml
 	dir = dir.replace('manifests/', '')
 	try:
@@ -111,4 +110,4 @@ for dir in dirs:
 
 # Write to manifest.yml
 with open('manifest.yml', 'w') as m:
-	m.write(yaml.dump(mf_yaml, default_flow_style=False))
+	m.write(yaml.dump(mf_yaml, default_flow_style=False, sort_keys=False))
