@@ -1,4 +1,4 @@
-name: neopkg
+name: neopkgs
 testa:
 - commit: 3f6ef4f518190edb93cbcdee9fd6017673e65b10
   diamond.txt:
@@ -173,4 +173,4 @@ testb:
     path: manifests/testb/iron.txt
     sha256: c4b8bb8d91aa8dac594490a85114c6f96c7252660cb267de305df7bcf4ed0cfe
     url: https://raw.githubusercontent.com/m1ten/neopkgs/376b53439e085b6cbf8ceb3e0c29c9ec94254b14/manifests/testb/iron.txt
-latest_commit: 376b53439e085b6cbf8ceb3e0c29c9ec94254b14
+latest_commit: 49fc1b54fcaf7c6e051b458ec8b150ca8a819388
