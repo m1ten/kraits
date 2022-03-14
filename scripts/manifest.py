@@ -80,7 +80,7 @@ for dir in dirs:
 		os.remove(f"{mf[file]['path']}.sha256sum")
 
 		# Get url of file in dir
-		mf[file]['url'] = f"https://github.com/m1ten/time/blob/{commit}/{mf[file]['path']}"
+		mf[file]['url'] = f"https://github.com/m1ten/neopkg/blob/{commit}/{mf[file]['path']}"
 
 	# Add to manifest
 	mf['commit'] = commit
