@@ -57,6 +57,7 @@ if not mf_yaml:
 # Get name of repo 
 mf_yaml['name'] = 'neopkgs'
 mf_yaml['latest_commit'] = commit
+mf_yaml['packages'] = [{}]
 
 # Check if dirs is empty
 if len(dirs) == 0:
@@ -72,7 +73,7 @@ for dir in dirs:
 	print(dir)
 	mf = {}
 	mf['commit'] = commit
-	mf['contents'] = [{}]
+	mf['contents'] = []
 	
 	files = os.listdir(dir)
 	for file in files:
@@ -90,17 +91,19 @@ for dir in dirs:
 				except KeyError: 
 					print('Invalid yaml file: ' + file)
 
-		mf['contents'][file] = {}
-		mf['contents'][file]['path'] = dir + "/" + file
+		f_dict = {}
+		f_dict['path'] = dir + "/" + file
 		
 		# Get sha256sum of file in dir
-		os.system(f"sha256sum {mf['contents'][file]['path']} > {mf['contents'][file]['path']}.sha256sum")
-		with open(f"{mf['contents'][file]['path']}.sha256sum", 'r') as f:
+		os.system(f"sha256sum {f_dict['path']} > {f_dict['path']}.sha256sum")
+		with open(f"{f_dict['path']}.sha256sum", 'r') as f:
 			mf['contents'][file]['sha256'] = f.read().split()[0]
-		os.remove(f"{mf['contents'][file]['path']}.sha256sum")
+		os.remove(f"{f_dict['path']}.sha256sum")
 
 		# Get url of file in dir
-		mf['contents'][file]['url'] = f"https://raw.githubusercontent.com/{repo}/{commit}/{mf['contents'][file]['path']}"
+		f_dict['url'] = f"https://raw.githubusercontent.com/{repo}/{commit}/{f_dict['path']}"
+
+		mf['contents'].append(f_dict)
 
 	dir = dir.replace('manifests/', '')
 
