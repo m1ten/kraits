@@ -86,12 +86,12 @@ for dir in dirs:
 				f_yaml = yaml.load(f_file, Loader=yaml.FullLoader)
 
 				try:
-					mf['ver'] = f_yaml['ver']
-					mf['updates'] = f_yaml['updates']
+					ver = f_yaml['ver']
 				except KeyError: 
 					print('Invalid yaml file: ' + file)
 
 		f_dict = {}
+		f_dict['name'] = file
 		f_dict['path'] = dir + "/" + file
 		
 		# Get sha256sum of file in dir
@@ -108,12 +108,12 @@ for dir in dirs:
 	dir = dir.replace('manifests/', '')
 
 	try:
-		if mf in mf_yaml["packages"][dir]:
-			print(f"Modified {dir} already exists in manifest.yml")
+		if mf in mf_yaml["packages"][dir][ver]:
+			print(f"Modified {dir} - {ver} already exists in manifest.yml")
 		else:
-			mf_yaml["packages"][dir].append(mf)
+			mf_yaml["packages"][dir][ver].append(mf)
 	except KeyError:
-		mf_yaml["packages"][dir] = [mf]
+		mf_yaml["packages"][dir][ver] = [mf]
 
 	print(mf)
 
