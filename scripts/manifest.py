@@ -72,6 +72,7 @@ for dir in dirs:
 	print(dir)
 	mf = {}
 	mf['commit'] = commit
+	mf['contents'] = [{}]
 	
 	files = os.listdir(dir)
 	for file in files:
@@ -89,7 +90,6 @@ for dir in dirs:
 				except KeyError: 
 					print('Invalid yaml file: ' + file)
 
-		mf['contents'] = []
 		mf['contents'][file] = {}
 		mf['contents'][file]['path'] = dir + "/" + file
 		
