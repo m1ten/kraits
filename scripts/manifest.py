@@ -22,8 +22,8 @@ def get_flag(flag):
 	return None
 
 commit = get_flag('--commit')
+repo = get_flag('--repo')
 		
-
 # Get list of dirs in a subdir that changed in the last commit
 def get_changed_dirs(subdir):
 	changed_dirs = []
@@ -66,8 +66,12 @@ dirs = [d for d in dirs if d != '']
 
 print(dirs)
 
+i = 0
+
 # Get list of files in each folder
 for dir in dirs:
+	i += 1
+
 	print(dir)
 	mf = {}
 	mf['commit'] = commit
@@ -98,16 +102,14 @@ for dir in dirs:
 		os.remove(f"{mf[file]['path']}.sha256sum")
 
 		# Get url of file in dir
-		mf[file]['url'] = f"https://raw.githubusercontent.com/m1ten/neopkgs/{commit}/{mf[file]['path']}"
+		mf[file]['url'] = f"https://raw.githubusercontent.com/{repo}/{commit}/{mf[file]['path']}"
 
-	# Add mf to mf_yaml
-	dir = dir.replace('manifests/', '')
-	try:
-		if mf in mf_yaml[dir]:
-			print(f"Modified {dir} already exists in manifest.yml")
-		mf_yaml[dir].append(mf)
-	except KeyError:
-		mf_yaml[dir] = [mf]
+	mf['name'] = dir.replace('manifests/', '')
+
+	if mf == mf_yaml[i]:
+		print(f"Modified {dir} already exists in manifest.yml")
+	else:
+		mf_yaml[i] = mf
 
 	print(mf)
 

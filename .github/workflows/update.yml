@@ -24,7 +24,7 @@ jobs:
 
           # Update manifest.yml
 
-          python3 scripts/manifest.py --commit $GITHUB_SHA
+          python3 scripts/manifest.py --commit $GITHUB_SHA --repo $GITHUB_REPOSITORY
       
           # Check if manifest.yml has changed
           if [ "$(git diff --name-only HEAD manifest.yml)" != "" ]; then
