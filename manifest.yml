@@ -1,5 +1,5 @@
 name: neopkgs
-latest_commit: 601157911de65f8b09a498e06bd057bd85b115e7
+latest_commit: e35a2610ab90feb59f6f94760e1a76cf196fdd78
 packages:
   testb:
     0.1.0:
@@ -39,6 +39,25 @@ packages:
         path: manifests/testb/iron.txt
         sha256: c4b8bb8d91aa8dac594490a85114c6f96c7252660cb267de305df7bcf4ed0cfe
         url: https://raw.githubusercontent.com/m1ten/neopkgs/601157911de65f8b09a498e06bd057bd85b115e7/manifests/testb/iron.txt
+    0.2.0:
+    - commit: e35a2610ab90feb59f6f94760e1a76cf196fdd78
+      contents:
+      - name: testb.yml
+        path: manifests/testb/testb.yml
+        sha256: ad4574c92678822e0286fe8548f36489f6a1f94d40cbd13c0d6f28248a1f1bb2
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testb/testb.yml
+      - name: zinc.txt
+        path: manifests/testb/zinc.txt
+        sha256: 68694dda4cce4f295aeba29269ba68080c32c0d511ec4e883fcf06b6c25890bc
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testb/zinc.txt
+      - name: copper.txt
+        path: manifests/testb/copper.txt
+        sha256: 29400ea6183dff5e3be765450198a6b90660d1478e319252b49dd499bb7c70ea
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testb/copper.txt
+      - name: iron.txt
+        path: manifests/testb/iron.txt
+        sha256: c4b8bb8d91aa8dac594490a85114c6f96c7252660cb267de305df7bcf4ed0cfe
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testb/iron.txt
   testa:
     0.1.0:
     - commit: 1656db36e45742201f5bde096895ecad4896b081
@@ -77,6 +96,25 @@ packages:
         path: manifests/testa/silver.txt
         sha256: 276c395e3b8f178438b53d3e92de3c78e079bbabfa2e893c8880b57f062e2b78
         url: https://raw.githubusercontent.com/m1ten/neopkgs/601157911de65f8b09a498e06bd057bd85b115e7/manifests/testa/silver.txt
+    0.2.0:
+    - commit: e35a2610ab90feb59f6f94760e1a76cf196fdd78
+      contents:
+      - name: diamond.txt
+        path: manifests/testa/diamond.txt
+        sha256: de392592d634f745cac529d52fd08c7b98d460ec7324989f18de8a4886370f96
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testa/diamond.txt
+      - name: testa.yml
+        path: manifests/testa/testa.yml
+        sha256: 258570bc1e19a78d236516ba54e71173a6a617b4f2089dbf5997534a0345591d
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testa/testa.yml
+      - name: gold.txt
+        path: manifests/testa/gold.txt
+        sha256: b5cb684ea526152071c9bee8fb65b004194acb6b6e6254b40c90a71d3eb299c8
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testa/gold.txt
+      - name: silver.txt
+        path: manifests/testa/silver.txt
+        sha256: 276c395e3b8f178438b53d3e92de3c78e079bbabfa2e893c8880b57f062e2b78
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testa/silver.txt
   testc:
     0.1.0:
     - commit: 1656db36e45742201f5bde096895ecad4896b081
@@ -115,3 +153,22 @@ packages:
         path: manifests/testc/silver.txt
         sha256: 276c395e3b8f178438b53d3e92de3c78e079bbabfa2e893c8880b57f062e2b78
         url: https://raw.githubusercontent.com/m1ten/neopkgs/601157911de65f8b09a498e06bd057bd85b115e7/manifests/testc/silver.txt
+    0.2.0:
+    - commit: e35a2610ab90feb59f6f94760e1a76cf196fdd78
+      contents:
+      - name: diamond.txt
+        path: manifests/testc/diamond.txt
+        sha256: de392592d634f745cac529d52fd08c7b98d460ec7324989f18de8a4886370f96
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testc/diamond.txt
+      - name: testc.yml
+        path: manifests/testc/testc.yml
+        sha256: f65573588e3c2d19c6a40cdcc59eaf7fc5dd70e1922263ae6b0df3356de5a638
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testc/testc.yml
+      - name: gold.txt
+        path: manifests/testc/gold.txt
+        sha256: b5cb684ea526152071c9bee8fb65b004194acb6b6e6254b40c90a71d3eb299c8
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testc/gold.txt
+      - name: silver.txt
+        path: manifests/testc/silver.txt
+        sha256: 276c395e3b8f178438b53d3e92de3c78e079bbabfa2e893c8880b57f062e2b78
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/e35a2610ab90feb59f6f94760e1a76cf196fdd78/manifests/testc/silver.txt
