@@ -97,7 +97,7 @@ for dir in dirs:
 		# Get sha256sum of file in dir
 		os.system(f"sha256sum {f_dict['path']} > {f_dict['path']}.sha256sum")
 		with open(f"{f_dict['path']}.sha256sum", 'r') as f:
-			mf['contents'][file]['sha256'] = f.read().split()[0]
+			f_dict['sha256'] = f.read().split()[0]
 		os.remove(f"{f_dict['path']}.sha256sum")
 
 		# Get url of file in dir
