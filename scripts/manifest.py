@@ -105,15 +105,17 @@ for dir in dirs:
 
 		mf['contents'].append(f_dict)
 
-	dir = dir.replace('manifests/', '')
+	pkg = dir.replace('manifests/', '')
+
+	mf_yaml["packages"][pkg] = {}
 
 	try:
-		if mf in mf_yaml["packages"][dir][ver]:
-			print(f"Modified {dir} - {ver} already exists in manifest.yml")
+		if mf in mf_yaml["packages"][pkg][ver]:
+			print(f"Modified {pkg} - {ver} already exists in manifest.yml")
 		else:
-			mf_yaml["packages"][dir][ver].append(mf)
+			mf_yaml["packages"][pkg][ver].append(mf)
 	except KeyError:
-		mf_yaml["packages"][dir][ver] = [mf]
+		mf_yaml["packages"][pkg][ver] = [mf]
 
 	print(mf)
 
