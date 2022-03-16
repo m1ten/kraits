@@ -52,6 +52,7 @@ print(mf_yaml)
 # Check if mf_yaml is a empty dict
 if not mf_yaml:
 	print('manifest.yml is empty.')
+	mf_yaml = {}
 
 # Get name of repo 
 mf_yaml['name'] = 'neopkgs'
