@@ -63,7 +63,7 @@ if not mf_yaml:
 # Get name of repo
 mf_yaml['name'] = 'neopkgs'
 mf_yaml['latest_commit'] = commit
-mf_yaml['packages'] = {}
+mf_yaml['packages'] = {} if 'packages' not in mf_yaml else mf_yaml['packages']
 
 # Check if dirs is empty
 if len(dirs) == 0:
