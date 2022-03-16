@@ -89,17 +89,17 @@ for dir in dirs:
 				except KeyError: 
 					print('Invalid yaml file: ' + file)
 
-		mf[file] = {}
-		mf[file]['path'] = dir + "/" + file
+		mf['contents'][file] = {}
+		mf['contents'][file]['path'] = dir + "/" + file
 		
 		# Get sha256sum of file in dir
-		os.system(f"sha256sum {mf[file]['path']} > {mf[file]['path']}.sha256sum")
-		with open(f"{mf[file]['path']}.sha256sum", 'r') as f:
-			mf[file]['sha256'] = f.read().split()[0]
-		os.remove(f"{mf[file]['path']}.sha256sum")
+		os.system(f"sha256sum {mf['contents'][file]['path']} > {mf['contents'][file]['path']}.sha256sum")
+		with open(f"{mf['contents'][file]['path']}.sha256sum", 'r') as f:
+			mf['contents'][file]['sha256'] = f.read().split()[0]
+		os.remove(f"{mf['contents'][file]['path']}.sha256sum")
 
 		# Get url of file in dir
-		mf[file]['url'] = f"https://raw.githubusercontent.com/{repo}/{commit}/{mf[file]['path']}"
+		mf['contents'][file]['url'] = f"https://raw.githubusercontent.com/{repo}/{commit}/{mf['contents'][file]['path']}"
 
 	mf['name'] = dir.replace('manifests/', '')
 
