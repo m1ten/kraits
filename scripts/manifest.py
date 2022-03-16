@@ -89,6 +89,7 @@ for dir in dirs:
 				except KeyError: 
 					print('Invalid yaml file: ' + file)
 
+		mf['contents'] = []
 		mf['contents'][file] = {}
 		mf['contents'][file]['path'] = dir + "/" + file
 		
@@ -101,15 +102,15 @@ for dir in dirs:
 		# Get url of file in dir
 		mf['contents'][file]['url'] = f"https://raw.githubusercontent.com/{repo}/{commit}/{mf['contents'][file]['path']}"
 
-	mf['name'] = dir.replace('manifests/', '')
+	dir = dir.replace('manifests/', '')
 
 	try:
-		if mf in mf_yaml["packages"]:
+		if mf in mf_yaml["packages"][dir]:
 			print(f"Modified {dir} already exists in manifest.yml")
 		else:
-			mf_yaml["packages"].append(mf)
+			mf_yaml["packages"][dir].append(mf)
 	except KeyError:
-		mf_yaml["packages"] = [mf]
+		mf_yaml["packages"][dir] = [mf]
 
 	print(mf)
 
