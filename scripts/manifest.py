@@ -67,12 +67,8 @@ dirs = [d for d in dirs if d != '']
 
 print(dirs)
 
-i = 0
-
 # Get list of files in each folder
 for dir in dirs:
-	i += 1
-
 	print(dir)
 	mf = {}
 	mf['commit'] = commit
@@ -107,10 +103,13 @@ for dir in dirs:
 
 	mf['name'] = dir.replace('manifests/', '')
 
-	if mf == mf_yaml[i]:
-		print(f"Modified {dir} already exists in manifest.yml")
-	else:
-		mf_yaml[i] = mf
+	try:
+		if mf in mf_yaml["packages"]:
+			print(f"Modified {dir} already exists in manifest.yml")
+		else:
+			mf_yaml["packages"].append(mf)
+	except KeyError:
+		mf_yaml["packages"] = [mf]
 
 	print(mf)
 
