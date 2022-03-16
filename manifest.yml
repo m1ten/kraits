@@ -1,5 +1,5 @@
 name: neopkgs
-latest_commit: 20677c9f38e8e847990d086ca89ed44023734d02
+latest_commit: a351b04dfbe729fbfd44d1968114bddf189843ea
 packages:
   test:
     0.1.0:
@@ -15,3 +15,9 @@ packages:
         path: manifests/test/test.yml
         sha256: 3497abb099d0ef8bbf4f8103caac76b30f591fed3c2ef9bedd6f58b3d533f87b
         url: https://raw.githubusercontent.com/m1ten/neopkgs/20677c9f38e8e847990d086ca89ed44023734d02/manifests/test/test.yml
+    - commit: a351b04dfbe729fbfd44d1968114bddf189843ea
+      contents:
+      - name: test.yml
+        path: manifests/test/test.yml
+        sha256: bdab84bda42ec21c299b85adc5d7ea7e91d6c52be58cafff56c2db0845a48e47
+        url: https://raw.githubusercontent.com/m1ten/neopkgs/a351b04dfbe729fbfd44d1968114bddf189843ea/manifests/test/test.yml
