@@ -107,15 +107,13 @@ for dir in dirs:
 
 	pkg = dir.replace('manifests/', '')
 
-	mf_yaml["packages"][pkg] = {}
+	mf_yaml['packages'][pkg] = {}
+	mf_yaml['packages'][pkg][ver] = []
 
-	try:
-		if mf in mf_yaml["packages"][pkg][ver]:
-			print(f"Modified {pkg} - {ver} already exists in manifest.yml")
-		else:
-			mf_yaml["packages"][pkg][ver].append(mf)
-	except KeyError:
-		mf_yaml["packages"][pkg][ver] = [mf]
+	if mf in mf_yaml['packages'][pkg][ver]:
+		print(f"Modified {pkg} - {ver} already exists in manifest.yml")
+	else:
+		mf_yaml['packages'][pkg][ver].append(mf)
 
 	print(mf)
 
