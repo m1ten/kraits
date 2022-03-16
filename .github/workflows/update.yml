@@ -19,6 +19,7 @@ jobs:
       - run: |
           echo $GITHUB_WORKSPACE
           echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
 
           cd $GITHUB_WORKSPACE
 
