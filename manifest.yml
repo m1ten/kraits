@@ -1,5 +1,5 @@
 name: neopkgs
-latest_commit: a29b267f5ff1c7a1f7d05bf152fe3ec3811a33f0
+latest_commit: 8a9f3fa96820a5738252510f02d30a0a3e274783
 packages:
   test:
     0.1.0:
@@ -35,3 +35,9 @@ packages:
         path: manifests/example/example.yml
         sha256: f87b2fe1c0f9d6b5dc9bc2e1c0f73af582541b7b7bc179244dd6639d92b14671
         url: https://raw.githubusercontent.com/m1ten/wix-pkgs/a29b267f5ff1c7a1f7d05bf152fe3ec3811a33f0/manifests/example/example.yml
+    - commit: 8a9f3fa96820a5738252510f02d30a0a3e274783
+      contents:
+      - name: example.yml
+        path: manifests/example/example.yml
+        sha256: 4641430444a3d601debac3d661cb86cf9ece0198ceaed0e68a98f4d9f3685b18
+        url: https://raw.githubusercontent.com/m1ten/wix-pkgs/8a9f3fa96820a5738252510f02d30a0a3e274783/manifests/example/example.yml
