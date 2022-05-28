@@ -48,8 +48,11 @@ def get_changed_dirs(subdir):
 dirs = get_changed_dirs('manifest')
 
 # Read manifest.yml
-with open('manifest.yml', 'r') as m:
-    mf_file = m.read()
+try:
+    with open('manifest.yml', 'r') as m:
+        mf_file = m.read()
+except FileNotFoundError:
+    mf_file = ''
 
 # Get yaml data from mf_file
 mf_yaml = yaml.load(mf_file, Loader=yaml.FullLoader)
