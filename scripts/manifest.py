@@ -67,6 +67,7 @@ if not mf_yaml:
 # Get name of repo
 mf_yaml['name'] = repo
 mf_yaml['latest_commit'] = commit
+mf_yaml['last_updated'] = str(datetime.datetime.now())
 mf_yaml['packages'] = {} if 'packages' not in mf_yaml else mf_yaml['packages']
 
 # Check if dirs is empty
@@ -128,9 +129,6 @@ for dir in dirs:
         mf_yaml['packages'][pkg][ver].append(mf)
 
     print(mf)
-
-# get current time
-mf_yaml['last_updated'] = str(datetime.datetime.now())
 
 # Write to manifest.yml
 with open('manifest.yml', 'w') as m:
