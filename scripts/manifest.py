@@ -1,10 +1,10 @@
 #!/bin/python3
 
-# Generate a mainfest.yml file for the main directory in a git repository
+# Generate a manifest.yml file for the main directory in a git repository
 
 # Note: This script is intended to be run from the root of the repository
 #       and will be run automatically by the CI server
-#	   (see .github/workflows/mainfest.yml)
+#	   (see .github/workflows/manifest.yml)
 
 # Only supports Linux (for now)
 
