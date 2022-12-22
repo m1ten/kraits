@@ -1,2 +1,2 @@
 krait.pkg.name = "example"
-krait.pkg.ver = "1" -- increment on every change
+krait.pkg.ver = "2" -- increment on every change
