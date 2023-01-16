@@ -1,4 +1,4 @@
 krait.pkg = {
     name = "example",
-    ver = "2", -- increment on every change 1
+    ver = "1", -- increment on every change
 }
